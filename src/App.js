@@ -7,10 +7,10 @@ function App() {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
   //const [search, setSearch] = useState('');
-  const [term, setTerm] = useState('');
+  const [term, setTerm] = useState('random');
 
   useEffect(() => {
-    fetch(`https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${term}&image_type=photo&pretty=true`)
+    fetch(`https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${term}&image_type=photo&per_page=20&pretty=true&per_page=51`)
       .then(res => res.json())
       .then(data => {
         setImages(data.hits);
